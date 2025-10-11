@@ -11,9 +11,9 @@ public interface AnimalRepository extends JpaRepository<Animal, Long> {
 
     List<Animal> getAnimalByDescription(String description);
 
-    @Query(value = "select * from Animal a where a.name like concat('%', ?1, '%')", nativeQuery = true)
+    @Query(value = "select * from animals a where a.name like '%' || ?1 || '%'", nativeQuery = true)
     List<Animal> getAnimalByName(String name);
 
-    @Query(value = "select * from Animal a where a.title like concat('%', ?1, '%')", nativeQuery = true)
+    @Query(value = "select * from animals a where a.title like '%' || ?1 || '%'", nativeQuery = true)
     List<Animal> getAnimalByTitle(String title);
 }
