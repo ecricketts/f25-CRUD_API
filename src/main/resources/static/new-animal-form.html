@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Animal Friends Gallery | Add a New Pal</title>
+    </head>
+    <body>
+        <header><img src="images/banner.png" alt="a smiling dog"></header>
+        <div class="toolbar">
+            <a href="index.html">Home</a>
+            <form action="new-animal-form.html" method="GET">
+                <button type="submit">Add A Pal</button>
+            </form>
+                <select id="details" onchange="location = this.value;">
+                    <option value="">Pal Details</option>
+                    <option value="details.html">Ein</option>
+                    <option value="details.html">Luna</option>
+                    <option value="details.html">Chopper</option>
+                    <option value="details.html">Gama</option>
+                    <option value="details.html">Hawk</option>
+                </select>
+            <a href="about.html">About us</a>    
+            <form action="/search" method="GET">
+                    <input type="search" name="q" placeholder="Search...">
+                    <button type="submit" aria-label="Search">
+                       <img src="images/Magnifying_glass_icon.svg" alt="Search" width="24" height="24">
+                </button>
+            </form>
+        </div>
+
+        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">   
+            Pal Name:
+            <input type="text" name="name"><br>
+            Pal Title:
+            <input type="text" name="title"><br>
+            Details:<br>
+            <textarea name="details" rows="10" cols="30"></textarea><br>
+            <input type="file" name="photo"  accept="image/*">
+            <button type="submit" aria-label="submit">Submit</button>
+            <button type="reset" aria-label="reset">Reset</button>
+        </form>
+    </body>
+</html>
