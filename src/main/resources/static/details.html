@@ -14,13 +14,8 @@
             <form action="new-animal-form.html" method="GET">
                 <button type="submit">Add A Pal</button>
             </form>
-                <select id="details" onchange="location = this.value;">
+                <select id="details">
                     <option value="">Pal Details</option>
-                    <option value="details.html">Ein</option>
-                    <option value="details.html">Luna</option>
-                    <option value="details.html">Chopper</option>
-                    <option value="details.html">Gama</option>
-                    <option value="details.html">Hawk</option>
                 </select>
             <a href="about.html">About us</a>    
             <form action="/search" method="GET">
@@ -34,88 +29,11 @@
         <div class="deck-wrapper">
             <button class="arrow prev" aria-label="Previous card">&#8592;</button>
             <div class="deck-viewport">
-                <div class="deck">
-                    <div class="card"> <!-- card 1 -->
-                        <img src="images/corgi.jpg" alt="Ein - The Clever Corgi">
-                        <h3>Ein - The Clever Corgi</h3>
-                        <p>Quiet and intelligent, Ein has an almost human-like curiosity and empathy. Though he can’t speak,
-                             his expressive eyes and clever actions make him a beloved and trusted companion.</p>
-                    </div>
-                    <div class="card"> <!-- card 2 -->
-                        <img src="images/blackCat.jpg" alt="Luna - The Cosmic Cat">
-                        <h3>Luna - The Cosmic Cat</h3>
-                        <p>Wise and caring, Luna often acts as a serious and responsible mentor. Though she can be strict,
-                             she is deeply caring and supports with unwavering loyalty.</p>
-                    </div>
-                    <div class="card"> <!-- card 3 (center) -->
-                        <img src="images/reindeer.jpg" alt="Chopper - The Rumbling Reindeer">
-                        <h3>Chopper - The Rumbling Reindeer</h3>
-                        <p>Shy and kind-hearted, Chopper is gentle and caring, sometimes insecure about his abilities. Over time, he grows brave and determined,
-                             always putting his friends’ wellbeing first.</p>
-                    </div>
-                    <div class="card"> <!-- card 4 -->
-                        <img src="images/redToad.jpg" alt="Gama - The Tough Toad">
-                        <h3>Gama - The Tough Toad</h3>
-                        <p>Gruff and authoritative, Gama carries himself with pride and confidence. He’s a no-nonsense leader who
-                             demands respect but also shows honor and loyalty to those he trusts.</p>
-                    </div>
-                    <div class="card"> <!-- card 5 -->
-                        <img src="images/pig.jpg" alt="Hawk - The Sinful Swine">
-                        <h3>Hawk - The Sinful Swine</h3>
-                        <p>Cheerful and comedic, Hawk is a lovable jokester with a big heart. Despite his silliness and occasional cowardice,
-                             he’s fiercely loyal and always ready to help his friends.</p>
-                    </div>
+                <div class="deck" id="deck">
                 </div>
             </div>    
                 <button class="arrow next" aria-label="Next card">&#8594;</button>
         </div>
-<script>
-  const deck = document.querySelector('.deck');
-  const cards = Array.from(deck.children);
-  const prevBtn = document.querySelector('.arrow.prev');
-  const nextBtn = document.querySelector('.arrow.next');
-
-  let currentIndex = 2; // start in the middle
-
-function updateDeck() {
-  cards.forEach(card => card.classList.remove('active'));
-  cards[currentIndex].classList.add('active');
-
-  const viewport = document.querySelector('.deck-viewport');
-  const viewportWidth = viewport.offsetWidth;
-
-  let offset = 0;
-
-  // Sum widths of all cards before the current one
-  for (let i = 0; i < currentIndex; i++) {
-    offset += cards[i].offsetWidth + 20; // 20px is the CSS gap
-  }
-
-  const activeCard = cards[currentIndex];
-  const activeCardWidth = activeCard.offsetWidth;
-
-  // Shift so that active card is centered
-  let scrollAmount = offset + activeCardWidth / 2 - viewportWidth / 2;
-
-  // Don't let scrollAmount go below 0 (don't scroll past beginning)
-  scrollAmount = Math.max(0, scrollAmount);
-
-  deck.style.transform = `translateX(-${scrollAmount}px)`;
-}
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    updateDeck();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % cards.length;
-    updateDeck();
-  });
-
-  // Initial call
-  window.addEventListener('load', updateDeck);
-  window.addEventListener('resize', updateDeck); // maintain center on resize
-</script>
+        <script src="app.js" defer></script>
     </body>
 </html>
