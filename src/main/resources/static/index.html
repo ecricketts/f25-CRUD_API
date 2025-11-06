@@ -13,13 +13,8 @@
             <form action="new-animal-form.html" method="GET">
                 <button type="submit">Add A Pal</button>
             </form>
-                <select id="details" onchange="location = this.value;">
+                <select id="details">
                     <option value="">Pal Details</option>
-                    <option value="details.html">Ein</option>
-                    <option value="details.html">Luna</option>
-                    <option value="details.html">Chopper</option>
-                    <option value="details.html">Gama</option>
-                    <option value="details.html">Hawk</option>
                 </select>
             <a href="about.html">About us</a>    
             <form action="/search" method="GET">
@@ -29,73 +24,8 @@
                 </button>
             </form>
         </div>
-        <div class="gallery">
-        <!--1st animal-->
-        <figure>
-            <a href="details.html">
-                <div class="figure-content">
-                <img src="images/corgi.jpg" alt="a corgi sitting in a field." width="600" height="400">
-                <div class="overlay">Get Details</div>
-                </div>
-            </a>    
-            <figcaption>
-                Ein<br>
-                The Clever Corgi
-            </figcaption>
-        </figure>
-        <!--2nd animal-->
-        <figure>
-            <a href="details.html">
-                <div class="figure-content">
-                <img src="images/blackCat.jpg" alt="a black cat walking." width="600" height="400">
-                <div class="overlay">Get Details</div>
-                </div>
-            </a>    
-            <figcaption>
-                Luna<br>
-                The Cosmic Cat
-            </figcaption>
-        </figure>
-        <!--3rd animal-->
-        <figure>
-            <a href="details.html">
-                <div class="figure-content">
-                <img src="images/reindeer.jpg" alt="a reindeer laughting." width="600" height="400">
-                <div class="overlay">Get Details</div>
-                </div>
-            </a>    
-            <figcaption>
-                Chopper<br>
-                The Rumbling Reindeer
-            </figcaption>
-        </figure>
-        <!--4th animal-->
-        <figure>
-            <a href="details.html">
-                <div class="figure-content">
-                <img src="images/redToad.jpg" alt="a red toad relaxing." width="600" height="400">
-                <div class="overlay">Get Details</div>
-                </div>
-            </a>    
-            <figcaption>
-                Gama<br>
-                The Tough Toad
-            </figcaption>
-        </figure>
-        <!--5th animal-->
-        <figure>
-            <a href="details.html">
-                <div class="figure-content">
-                <img src="images/pig.jpg" alt="a pig eats out of a bowl." width="600" height="400">
-                <div class="overlay">Get Details</div>
-                </div>
-            </a>    
-            <figcaption>
-                Hawk<br>
-                The Sinful Swine
-            </figcaption>
-        </figure>
-    </div>
-
+        <div class="gallery" id="gallery">     
+        </div>
+        <script src="app.js" defer></script>
     </body>
 </html>
