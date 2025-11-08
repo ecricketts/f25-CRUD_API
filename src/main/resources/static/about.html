@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>About Us | Super Pet Friends</title>
-    </head>
-    <body>
-        <header><img src="images/banner.png" alt="a smiling dog"></header>
-        <div class="toolbar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About Us | Super Pet Friends</title>
+</head>
+<body data-page="about">
+    <header class="site-header">
+        <img src="images/banner.png" alt="A smiling dog" class="site-logo">
+        <nav class="navbar">
             <a href="index.html">Home</a>
-            <form action="new-animal-form.html" method="GET">
-                <button type="submit">Add A Pal</button>
+
+            <form action="new-animal-form.html" method="GET" class="nav-form">
+                <button type="submit" class="btn-primary">Add A Pal</button>
             </form>
-                <select id="details">
-                    <option value="">Pal Details</option>
-                </select>
-            <a href="about.html">About us</a>    
-            <form action="/search" method="GET">
-                    <input type="search" name="q" placeholder="Search...">
-                    <button type="submit" aria-label="Search">
-                       <img src="images/Magnifying_glass_icon.svg" alt="Search" width="24" height="24">
+
+            <select class="nav-select pal-select" onchange="location = this.value;">
+                <option value="">Pal Details</option>
+                <option value="details.html">Ein</option>
+                <option value="details.html">Luna</option>
+                <option value="details.html">Chopper</option>
+                <option value="details.html">Gama</option>
+                <option value="details.html">Hawk</option>
+            </select>
+
+            <a href="about.html">About Us</a>
+
+            <form action="/search" method="GET" class="search-form">
+                <input type="search" name="q" placeholder="Search..." class="search-input">
+                <button type="submit" aria-label="Search" class="search-btn">
+                    <img src="images/Magnifying_glass_icon.svg" alt="Search">
                 </button>
             </form>
-        </div>
-        <section id="about-me">
-            <h1>About Us</h1>
-            <img src="images/aboutUs.jpg" alt="Some dudes">
-            <p>It's always been our mission to provide the general public with the most outstanding companions, sidekicks,
-                and all around best pals a person can ask for. We've created this website to share our passion with you, and
-                the whole world.
-            </p>
-        </section>
-        <script src="app.js" defer></script>
-    </body>
+        </nav>
+    </header>
+
+    <section id="about-me">
+        <h1>About Us</h1>
+        <img src="images/aboutUs.jpg" alt="Some dudes">
+        <p>
+            It's always been our mission to provide the general public with the most outstanding companions, sidekicks,
+            and all-around best pals a person can ask for. We've created this website to share our passion with you,
+            and the whole world.
+        </p>
+    </section>
+
+    <script src="app.js" defer></script>
+</body>
 </html>
