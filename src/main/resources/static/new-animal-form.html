@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Animal Friends Gallery | Add a New Pal</title>
+</head>
+<body data-page="form">
+    <header class="site-header">
+        <img src="images/banner.png" alt="A smiling dog" class="site-logo">
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+
+            <form action="new-animal-form.html" method="GET" class="nav-form">
+                <button type="submit" class="btn-primary">Add A Pal</button>
+            </form>
+
+            <select class="nav-select pal-select" onchange="location = this.value;">
+                <option value="">Pal Details</option>
+                <option value="details.html">Ein</option>
+                <option value="details.html">Luna</option>
+                <option value="details.html">Chopper</option>
+                <option value="details.html">Gama</option>
+                <option value="details.html">Hawk</option>
+            </select>
+
+            <a href="about.html">About Us</a>
+
+            <form action="/search" method="GET" class="search-form">
+                <input type="search" name="q" placeholder="Search..." class="search-input">
+                <button type="submit" aria-label="Search" class="search-btn">
+                    <img src="images/Magnifying_glass_icon.svg" alt="Search">
+                </button>
+            </form>
+        </nav>
+    </header>
+
+    <main>
+        <form id="upload-form" enctype="multipart/form-data">   
+            <label>
+                Pal Name:
+                <input type="text" name="name" required>
+            </label><br>
+
+            <label>
+                Pal Title:
+                <input type="text" name="title" required>
+            </label><br>
+
+            <label>
+                Details:<br>
+                <textarea name="details" rows="10" cols="30" required></textarea>
+            </label><br>
+
+            <label>
+                Photo:
+                <input type="file" name="photo" accept="image/*">
+            </label><br>
+
+            <button type="submit" aria-label="submit">Submit</button>
+            <button type="reset" aria-label="reset">Reset</button>
+        </form>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
